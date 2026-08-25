@@ -1,0 +1,178 @@
+CastError: Cast to ObjectId failed for value "notavalidid" (type string) at path "_id" for model "Listing"
+    at SchemaObjectId.cast (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\schema\objectId.js:252:11)
+    at SchemaType.applySetters (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\schemaType.js:1395:12)
+    at SchemaType.castForQuery (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\schemaType.js:1815:17)
+    at cast (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:5228:12)
+    at Query._castConditions (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2411:10)
+    at model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2758:8)
+    at maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:83)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async C:\Users\vinit\OneDrive\Desktop\Major project\app.js:85:19
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async [Symbol.asyncIterator] (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:253:34)
+    at async FindCursor.toArray (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:405:26)
+    at async model.Query._find (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2475:14) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'Single',
+    servers: Map(1) { '127.0.0.1:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 27,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [cause]: MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+      at Socket.<anonymous> (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cmap\connect.js:314:44)
+      at Object.onceWrapper (node:events:623:26)
+      at Socket.emit (node:events:508:28)
+      at emitErrorNT (node:internal/streams/destroy:170:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    errorLabelSet: Set(3) { 'SystemOverloadedError', 'RetryableError', 'ResetPool' },
+    beforeHandshake: false,
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:27017
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1645:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 27017
+    }
+  }
+}
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async [Symbol.asyncIterator] (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:253:34)
+    at async FindCursor.toArray (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:405:26)
+    at async model.Query._find (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2475:14) {
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'Single',
+    servers: Map(1) { '127.0.0.1:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 27,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [cause]: MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+      at Socket.<anonymous> (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cmap\connect.js:314:44)
+      at Object.onceWrapper (node:events:623:26)
+      at Socket.emit (node:events:508:28)
+      at emitErrorNT (node:internal/streams/destroy:170:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    errorLabelSet: Set(3) { 'SystemOverloadedError', 'RetryableError', 'ResetPool' },
+    beforeHandshake: false,
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:27017
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1645:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 27017
+    }
+  }
+}
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:567:9)
+    at process.processTimers (node:internal/timers:541:7)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
+MongoServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\sdam\topology.js:348:38)
+    at async executeOperationWithRetries (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:157:18)
+    at async executeOperation (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\operations\execute_operation.js:83:16)
+    at async FindCursor._initialize (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\find_cursor.js:62:26)
+    at async FindCursor.cursorInit (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:619:27)
+    at async FindCursor.fetchBatch (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:653:13)
+    at async FindCursor.next (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\cursor\abstract_cursor.js:325:17)
+    at async Collection.findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongodb\lib\collection.js:313:24)
+    at async model.Query._findOne (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:2773:15)
+    at async maybeTracedQueryExec (C:\Users\vinit\OneDrive\Desktop\Major project\node_modules\mongoose\lib\query.js:4796:65)
