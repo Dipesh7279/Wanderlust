@@ -6,6 +6,10 @@ const methodOverride = require("method-override")
 const ejsMate = require("ejs-mate");
 
 const Listing = require("./Models/listing")
+const {listingSchema,reviewSchema}= require("./schema.js")
+
+const Review = require("./Models/review.js");
+
 
 const app = express()
 
@@ -39,7 +43,7 @@ app.set("views", path.join(__dirname, "views"))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride("_method"))
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname,"public")))
+app.use(express.static(path.join(__dirname, "public")))
 
 
 
@@ -63,6 +67,29 @@ app.get("/", (req, res) => {
   }
 
 })*/
+
+const validatelisting =  (req,res,next)=>{
+  let {error}= listingSchema.validate(req.body)
+  if(error){
+    let errMsg = error.details.map((el)=> el.message).join(",");
+    throw new ExpressError(400,errMsg);
+  }else{
+    next()
+  }
+  }
+
+const validateReviews =  (req,res,next)=>{
+  let {error}= reviewSchema.validate(req.body)
+  if(error){
+    let errMsg = error.details.map((el)=> el.message).join(",");
+    throw new ExpressError(400,errMsg);
+  }else{
+    next()
+  }
+  }
+  
+
+  
 
 
 //index route
@@ -100,6 +127,10 @@ app.post("/listings", async (req, res) => {
     return res.status(400).send("Title is required")
   }
 
+  if (!listingData.price || isNaN(listingData.price) || listingData.price <= 0) {
+    return res.status(400).send("Price is required and must be greater than 0")
+  }
+
   const newListing = new Listing(listingData)
   await newListing.save()
   res.redirect("/listings")
@@ -129,6 +160,10 @@ app.post("/listings/:id", async (req, res) => {
     return res.status(400).send("Title is required")
   }
 
+  if (!listingData.price || isNaN(listingData.price) || listingData.price <= 0) {
+    return res.status(400).send("Price is required and must be greater than 0")
+  }
+
   await Listing.findByIdAndUpdate(id, listingData)
   res.redirect(`/listings/${id}`)
 })
@@ -139,6 +174,10 @@ app.put("/listings/:id", async (req, res) => {
 
   if (!listingData.title || listingData.title.trim() === "") {
     return res.status(400).send("Title is required")
+  }
+
+  if (!listingData.price || isNaN(listingData.price) || listingData.price <= 0) {
+    return res.status(400).send("Price is required and must be greater than 0")
   }
 
   await Listing.findByIdAndUpdate(id, listingData)
@@ -152,6 +191,30 @@ app.delete("/listings/:id", async (req, res) => {
   res.redirect("/listings")
   console.log(deletelisting)
 })
+
+//Reviews
+//post route
+app.post("/listings/:id/reviews",validateReviews, wrapAsync(async (req, res) => {
+  const listing = await Listing.findById(req.params.id)
+  const comment = req.body.review?.comment?.trim();
+
+  if (!comment) {
+    return res.status(400).send("Comment is required");
+  }
+
+  const newReview = new Review({
+    ...req.body.review,
+    comment
+  });
+
+  listing.reviews.push(newReview);
+
+  await newReview.save();
+  await listing.save();
+
+  res.send("new review saved")
+})
+)
 
 app.listen(8080, () => {
   console.log("server is listening on port 8080")

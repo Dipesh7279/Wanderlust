@@ -13,12 +13,16 @@ const listingSchema = new Schema({
     url: String
   },
 
-  price: Number,
+  price: {
+    type: Number,
+    required: true
+  },
   location: String,
   country: String,
   reviews:[
     {
-      type:Schema.Types.ObjectId
+      type:Schema.Types.ObjectId,
+      ref:"Review"
     }]
 
 })
