@@ -13,7 +13,10 @@ const listingSchema = new Schema({
     url: String
   },
 
-  price: Number,
+  price: {
+    type:Number,
+    required: true
+  },
   location: String,
   country: String
 

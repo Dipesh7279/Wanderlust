@@ -34,7 +34,7 @@
   
 
    
-  <form method="post" action="/listings/<%= listing._id %>">
+  <form method="post" action="/listings/<%= listing._id %>?_method=DELETE">
     <input type="hidden" name="_method" value="DELETE">
     <button class="btn btn-dark offset-5">Delete </button>
   </form>
