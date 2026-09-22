@@ -1,11 +1,4 @@
 {
-  "engines":{
-    "node":"v24.14.0"
-  }
-}
-
-
-{
   "name": "major-project",
   "version": "1.0.0",
   "description": "",
@@ -19,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": "v24.14.0"
+  },
   "dependencies": {
     "cloudinary": "^1.41.3",
     "connect-flash": "^0.1.1",
