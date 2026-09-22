@@ -18,7 +18,17 @@ const listingSchema = new Schema({
     required: true
   },
   location: String,
-  country: String
+  country: String,
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review"
+    }
+  ],owner:{
+    type:Schema.Types.ObjectId,
+    ref:"User"
+
+  }
 
 })
 

@@ -107,8 +107,15 @@ object-fit: cover !important;
 }
 /* show page */
 .show-img{
-  height:30vh
-  
+  width: 250px !important;
+  max-width: 100%;
+  height: auto;
+}
+
+.listing-preview{
+  width: 250px;
+  max-width: 100%;
+  height: auto;
 }
 
 .btns{
@@ -119,4 +126,15 @@ object-fit: cover !important;
   padding-right: 0;
   border: none !important;
   overflow: hidden
+}
+
+.review-comment,
+.review-submit{
+  width: 100%;
+}
+
+
+.review-comment {
+  width: 250px;
+  max-width: 100%;
 }
