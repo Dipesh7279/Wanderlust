@@ -1,5 +1,5 @@
 
-    let mapToken = "<%=process.env.MAP_TOKEN%>"
+    
     const map = new mapboxgl.Map({
         accessToken: 'mapToken',
         container: 'map', // container ID

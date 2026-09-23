@@ -139,7 +139,7 @@ object-fit: cover !important;
   max-width: 100%;
 }
 
-#map{
+#map {
   height:400px;
   width:80vh;
 }
